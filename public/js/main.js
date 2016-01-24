@@ -20,7 +20,7 @@ window.SHMUP = {
 
 window.onload = function() {
   SHMUP.game = new Phaser.Game( SHMUP.STAGE.WIDTH, SHMUP.STAGE.HEIGHT, Phaser.AUTO, SHMUP.STAGE_ID );
-  // SHMUP.game.state.add( SHMUP.STATES.BOOT, SHMUP.Boot );
-  // SHMUP.game.state.add( SHMUP.STATES.GAME, SHMUP.Game );
-  // SHMUP.game.state.start(SHMUP.STATES.BOOT);
+  SHMUP.game.state.add( SHMUP.STATES.BOOT, SHMUP.Boot );
+  SHMUP.game.state.add( SHMUP.STATES.GAME, SHMUP.Game );
+  SHMUP.game.state.start(SHMUP.STATES.BOOT);
 };
