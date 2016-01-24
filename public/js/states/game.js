@@ -18,8 +18,8 @@
     this.game.add.existing(this.player);
 
     // position player
-    // this.player.x = INITIAL_POSITIONS.x;
-    // this.player.y = INITIAL_POSITIONS.y;
+    this.player.x = INITIAL_POSITIONS[0].x;
+    this.player.y = INITIAL_POSITIONS[0].y;
 
   };
 
