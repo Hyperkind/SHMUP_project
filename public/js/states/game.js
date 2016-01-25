@@ -9,10 +9,14 @@
   SHMUP.Game = function() {
 
     this.player;
+    this.bullet;
 
   };
 
   SHMUP.Game.prototype.create = function() {
+
+    //loads the background
+    this.game.add.tileSprite(0, 0, SHMUP.ASSETS.IMAGE.BG.width, SHMUP.ASSETS.IMAGE.BG.height, SHMUP.ASSETS.IMAGE.BG.name);
 
     // loads the player into the game
     this.player = new SHMUP.Player(this.game, 0);
