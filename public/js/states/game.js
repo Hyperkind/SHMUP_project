@@ -2,7 +2,8 @@
 // handles sprite creation and game logic
 (function() {
 
-  var INITIAL_POSITIONS = [ { x : 100, y : 100 } ];
+  // var to place player at start of game
+  var INITIAL_POSITIONS = { x : 100, y : 300 };
 
   // class constructor
   SHMUP.Game = function() {
@@ -17,9 +18,12 @@
     this.player = new SHMUP.Player(this.game, 0);
     this.game.add.existing(this.player);
 
-    // position player
-    this.player.x = INITIAL_POSITIONS[0].x;
-    this.player.y = INITIAL_POSITIONS[0].y;
+    // initial position of the player
+    this.player.x = INITIAL_POSITIONS.x;
+    this.player.y = INITIAL_POSITIONS.y;
+
+    // initialize input handler
+    this.input = new SHMUP.GameInput(this);
 
   };
 
@@ -28,6 +32,11 @@
   };
 
   SHMUP.Game.prototype.shutdown = function() {
+
+  };
+
+  // Input action to continue
+  SHMUP.Game.prototype.continue = function() {
 
   };
 
