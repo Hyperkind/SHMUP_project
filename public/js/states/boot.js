@@ -7,6 +7,7 @@ SHMUP.Boot = function() {
 };
 
 SHMUP.Boot.prototype.preload = function() {
+
   // autoload assets by type
   Object.keys(SHMUP.ASSETS).forEach(function(type) {
     for(var asset in SHMUP.ASSETS[type]) {
@@ -14,8 +15,8 @@ SHMUP.Boot.prototype.preload = function() {
         SHMUP.ASSETS[type][ asset ].name,
         SHMUP.ASSETS[type][ asset ].path,
         SHMUP.ASSETS[type][ asset ].width,
-        SHMUP.ASSETS[type][ asset ].height
-        // SHMUP.ASSETS[type][ asset ].frames
+        SHMUP.ASSETS[type][ asset ].height,
+        SHMUP.ASSETS[type][ asset ].frames
       );
     }
   });

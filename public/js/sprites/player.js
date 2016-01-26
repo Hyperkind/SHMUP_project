@@ -1,14 +1,8 @@
 (function() {
 
-  var ANIMATIONS = {
-    FLYING : {
-      name : 'flying',
-      frames : [0],
-      fps : 5
-    }
-  };
-
-  var FLY_SPEED = 400;
+  var ACCLERATION = 600;
+  var DRAG = 400;
+  var MAXSPEED = 400;
 
   SHMUP.Player = function(game, id, name) {
     this.game = game;
@@ -21,12 +15,12 @@
     // enable physics (adds this.body)
     this.game.physics.enable(this, Phaser.Physics.ARCADE);
 
+    this.body.maxVelocity.setTo(MAXSPEED, MAXSPEED);
+    this.body.drag.setTo(DRAG, DRAG);
+
     // use stage bounding box
     this.body.collideWorldBounds = true;
 
-    this.animations.add(ANIMATIONS.FLYING.name, ANIMATIONS.FLYING.frames);
-
-    this.animations.play(ANIMATIONS.FLYING.name, ANIMATIONS.FLYING.fps, true);
   };
 
   // extend sprite prototype
@@ -49,29 +43,29 @@
   };
 
   SHMUP.Player.prototype.fly_left = function() {
-    this.body.velocity.x = -FLY_SPEED;
+    this.body.acceleration.x = -ACCLERATION;
   };
 
   SHMUP.Player.prototype.fly_right = function() {
-    this.body.velocity.x = FLY_SPEED;
+    this.body.acceleration.x = ACCLERATION;
   };
 
   SHMUP.Player.prototype.fly_up = function() {
-    this.body.velocity.y = -FLY_SPEED;
+    this.body.acceleration.y = -ACCLERATION;
   };
 
   SHMUP.Player.prototype.fly_down = function() {
-    this.body.velocity.y = FLY_SPEED;
+    this.body.acceleration.y = ACCLERATION;
   };
 
   // stop horizontal movement
   SHMUP.Player.prototype.stop_x = function() {
-    this.body.velocity.x = 0;
+    this.body.acceleration.x = 0;
   };
 
   // stop vertical movement
   SHMUP.Player.prototype.stop_y = function() {
-    this.body.velocity.y = 0;
+    this.body.acceleration.y = 0;
   };
 
 })();

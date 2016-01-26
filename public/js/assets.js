@@ -7,6 +7,13 @@ SHMUP.ASSETS = {
       height : 19,
       frames : 1
       // frames_per_row : 1
+    },
+    BULLET : {
+      name : 'bullet',
+      path : 'assets/graphics/shmup-bullet.png',
+      width : 12,
+      height : 5,
+      frames : 1
     }
   },
   IMAGE : {
