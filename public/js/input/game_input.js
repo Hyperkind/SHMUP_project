@@ -22,8 +22,8 @@
     this.state_keys = this.state.game.input.keyboard.addKeys(BIND.STATE);
 
     // key up and down listeners
-    this.player_keys.SHOOT.onDown.add( this.state.player.shoot.bind(this.state.player) );
-    this.player_keys.SHOOT.onUp.add( this.state.player.shoot_stop.bind(this.state.player) );
+    this.player_keys.SHOOT.onDown.add( this.state.bullet.shoot.bind(this.state.player) );
+    this.player_keys.SHOOT.onUp.add( this.state.bullet.shoot_stop.bind(this.state.player) );
     this.player_keys.LEFT.onDown.add( this.state.player.fly_left.bind(this.state.player) );
     this.player_keys.LEFT.onUp.add( this.state.player.stop_x.bind(this.state.player) );
     this.player_keys.RIGHT.onDown.add( this.state.player.fly_right.bind(this.state.player) );

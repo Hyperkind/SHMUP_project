@@ -34,13 +34,13 @@
 
   };
 
-  SHMUP.Player.prototype.shoot = function() {
+  // SHMUP.Player.prototype.shoot = function() {
 
-  };
+  // };
 
-  SHMUP.Player.prototype.shoot_stop = function() {
+  // SHMUP.Player.prototype.shoot_stop = function() {
 
-  };
+  // };
 
   SHMUP.Player.prototype.fly_left = function() {
     this.body.acceleration.x = -ACCLERATION;

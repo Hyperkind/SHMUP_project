@@ -29,8 +29,9 @@
     this.player.x = INITIAL_POSITIONS.x;
     this.player.y = INITIAL_POSITIONS.y;
 
-    // this.bullet = new SHMUP.Bullet(this.game, 0);
-    // this.game.add.existing(this.bullet);
+    this.bullet = new SHMUP.Bullet(this.game, 0);
+    this.game.add.existing(this.bullet);
+    this.bullet.anchor.setTo(0.5, 0.5);
 
     // initialize input handler
     this.input = new SHMUP.GameInput(this);

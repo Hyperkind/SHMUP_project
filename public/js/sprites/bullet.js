@@ -13,10 +13,11 @@
 
     this.texture.baseTexture.scaleMode = PIXI.scaleModes.NEAREST;
 
-    this.anchor.set(0.5);
+    // this.setAll('anchor.x', 0.5);
+    // this.setAll('anchor.y', 1);
 
     // enable physics (adds this.body)
-    // this.game.physics.enable(this, Phaser.Physics.ARCADE);
+    this.game.physics.enable(this, Phaser.Physics.ARCADE);
 
     // checks if the bullet is within the world bounds. If not, kills it
     this.checkWorldBounds = true;
@@ -67,6 +68,7 @@
   };
 
   SHMUP.Bullet.prototype.shoot = function() {
+    console.log("pew");
     this.body.velocity.x = BULLET_SPEED;
   };
 
@@ -85,7 +87,7 @@
     this.fireRate = 100;
 
     for (var i = 0; i < 64; i++) {
-      this.add(new Bullet(game, 'bullet5'), true);
+      this.add(new Bullet(game, 'bullet'), true);
     }
 
     return this;
